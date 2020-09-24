@@ -32,7 +32,7 @@
                                 </svg>
                             </li>
                             <li>
-                                <strong>Set administrative policies</strong> &mdash; set capacity limits for your offices, open or close offices as needed, and provide executives with in-office traffic analytics.
+                                <strong>Set administrative policies</strong> &mdash; set capacity limits for your offices, open or close offices as needed, and provide executives with a full analytics dashboard.
                                 <svg class="hero-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
                                     <path d="M9 5H7a2 2 0 0 0 -2 2v12a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2V7a2 2 0 0 0 -2 -2h-2" />
                                     <rect x="9" y="3" width="6" height="4" rx="2" />
@@ -40,7 +40,7 @@
                                 </svg>
                             </li>
                             <li>
-                                <strong>Customize with your branding</strong> &mdash; easily customize colors, logos, and more to match yor organization's branding and style guidelines.
+                                <strong>Customize with your branding</strong> &mdash; easily customize colors, logos, and more to match your organization's branding and style guidelines.
                                 <svg class="hero-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
                                     <path d="M12 21a9 9 0 1 1 0 -18a9 8 0 0 1 9 8a4.5 4 0 0 1 -4.5 4h-2.5a2 2 0 0 0 -1 3.75a1.3 1.3 0 0 1 -1 2.25" />
                                     <circle cx="7.5" cy="10.5" r="1" />
@@ -82,10 +82,10 @@
                             <div class="preview">
                                 <img src="griffin-app-2.png" class="preview-sizer" alt="Preview screenshot 1">
                                 <img src="griffin-app-1.png" class="screenshot screenshot-active" alt="Preview screenshot 1">
-                                <img src="griffin-app-2.png" class="screenshot" alt="Preview screenshot 2">
-                                <img src="griffin-app-3.png" class="screenshot" alt="Preview screenshot 3">
-                                <img src="griffin-app-4.png" class="screenshot" alt="Preview screenshot 4">
-                                <img src="griffin-app-5.png" class="screenshot" alt="Preview screenshot 5">
+                                <img src="griffin-app-2.png" class="screenshot screenshot-right" alt="Preview screenshot 2">
+                                <img src="griffin-app-3.png" class="screenshot screenshot-right" alt="Preview screenshot 3">
+                                <img src="griffin-app-4.png" class="screenshot screenshot-right" alt="Preview screenshot 4">
+                                <img src="griffin-app-5.png" class="screenshot screenshot-right" alt="Preview screenshot 5">
                             </div>
                             <div class="phone-shadow"></div>
                         </div>
@@ -98,11 +98,11 @@
                             </svg>
                         </button>
                         <div id="dots">
-                            <!-- <span class="dot"></span>
                             <span class="dot dot-active"></span>
                             <span class="dot"></span>
                             <span class="dot"></span>
-                            <span class="dot"></span> -->
+                            <span class="dot"></span>
+                            <span class="dot"></span>
                         </div>
                         <button class="btn step-button" id="buttonNext">
                             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 18">
@@ -207,6 +207,9 @@
                         // Remove the "screenshot-active class" from the old screenshot
                         screenshots[currentDot].classList.remove("screenshot-active");
 
+                        // Slide the screenshot off to the left
+                        screenshots[currentDot].classList.add("screenshot-left");
+
                         // Increment to the next preview screenshot
                         currentDot++;
 
@@ -215,6 +218,9 @@
 
                         // Add the "screenshot-active class" to the next screenshot
                         screenshots[currentDot].classList.add("screenshot-active");
+
+                        // Slide the screenshot in from the right
+                        screenshots[currentDot].classList.remove("screenshot-right");
 
                         // Checks if the Previous/Next buttons are displayed properly for this new tab (and fixes them if not)
                         checkButtonState();
@@ -235,6 +241,9 @@
                         // Remove the "screenshot-active class" from the old screenshot
                         screenshots[currentDot].classList.remove("screenshot-active");
 
+                         // Slide the screenshot off to the right
+                        screenshots[currentDot].classList.add("screenshot-right");
+
                         // Increment to the previous preview screenshot
                         currentDot--;
 
@@ -243,6 +252,9 @@
 
                         // Add the "screenshot-active class" to the next screenshot
                         screenshots[currentDot].classList.add("screenshot-active");
+
+                        // Slide the screenshot in from the left
+                        screenshots[currentDot].classList.remove("screenshot-left");
 
                         // Checks if the Previous/Next buttons are displayed properly for this new tab (and fixes them if not)
                         checkButtonState();

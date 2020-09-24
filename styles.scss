@@ -60,6 +60,7 @@ $color-phone-light: #1D2124;
 $font-main: "Roboto", sans-serif;
 
 $ease-cubic: cubic-bezier(0.19, 1, 0.22, 1);
+$ease-in-cubic: cubic-bezier(0.78, 0, 0.81, 0);
 
 @function rem-to-px($input){
     @return $input / 1rem * 16 + "px";
@@ -900,7 +901,7 @@ hr {
     top: 1em;
     @include translate(-50%, 0);
     width: 11em;
-    z-index: 2;
+    z-index: 3;
 
     &::after,
     &::before {
@@ -958,14 +959,29 @@ hr {
 
 .screenshot {
     left: 0;
-    opacity: 0;
+    opacity: 1;
     position: absolute;
     top: 0;
-    z-index: 0;
+    @include transition(transform 0.5s $ease-cubic);
+    z-index: 1;
 
     &.screenshot-active {
         opacity: 1;
-        z-index: 1;
+        z-index: 2;
+    }
+
+    &.screenshot-right,
+    &.screenshot-left {
+        opacity: 0;
+        @include transition(transform 0.5s ease, opacity 0.5s ease);
+    }
+
+    &.screenshot-right {
+        @include translate(100%, 0);
+    }
+
+    &.screenshot-left {
+        @include translate(-100%, 0);
     }
 }
 
