@@ -7,6 +7,7 @@
         <title>Office Scheduler App | Axway</title>
         <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
         <link rel="stylesheet" href="styles.min.css" type="text/css">
+        <link rel="shortcut icon" href="favicon.ico">
     </head>
     <body>
         <section class="hero">
@@ -197,8 +198,6 @@
                 buttonNext.addEventListener("click", function () {
                     if (currentDot < screenshots.length - 1) {
 
-                        console.log("Start: " + currentDot);
-
                         // console.log(stepDotsSection.children[currentDot]);
 
                         // Remove the "dot-active class" from the old dot
@@ -224,14 +223,10 @@
 
                         // Checks if the Previous/Next buttons are displayed properly for this new tab (and fixes them if not)
                         checkButtonState();
-
-                        console.log("End: " + currentDot);
                     }
                 })
                 buttonPrev.addEventListener("click", function () {
                     if (currentDot > 0) {
-
-                        console.log("Start: " + currentDot);
 
                         // console.log(stepDotsSection.children[currentDot]);
 
@@ -258,8 +253,6 @@
 
                         // Checks if the Previous/Next buttons are displayed properly for this new tab (and fixes them if not)
                         checkButtonState();
-
-                        console.log("End: " + currentDot);
                     }
                 })
 
