@@ -574,18 +574,18 @@ hr {
 .col-right {
     text-align: center;
 
-    &::before {
-        content: url("icon-griffin.svg");
-        display: block;
-        height: auto;
-        left: 50%;
-        opacity: 0.2;
-        position: absolute;
-        top: 50%;
-        @include transform(translate(-50%, -50%));
-        width: 44rem;
-        z-index: -1;
-    }
+    // &::before {
+    //     content: url("icon-griffin.svg");
+    //     display: block;
+    //     height: auto;
+    //     left: 50%;
+    //     opacity: 0.2;
+    //     position: absolute;
+    //     top: 50%;
+    //     @include transform(translate(-50%, -50%));
+    //     width: 44rem;
+    //     z-index: -1;
+    // }
 }
 
 .axway-logo {
@@ -612,6 +612,7 @@ hr {
     min-height: 3.25rem;
     padding: 0.675rem 1rem;
     position: relative;
+    text-align: center;
     text-decoration: none;
     transition: all 200ms ease;
     user-select: none;
@@ -629,9 +630,9 @@ hr {
     }
 
     & .cta-icon {
-        height: 1.75rem;
+        height: 1.675rem;
         fill: #FFF;
-        width: 1.75rem;
+        width: 1.675rem;
     }
 }
 
@@ -706,13 +707,14 @@ hr {
 
 .hero-title,
 .hero-text,
-.hero-button,
+.hero-buttons,
 .axway-logo {
     animation: pop-in 1s $ease-cubic both;
 }
 
 .hero-title {
     animation-delay: 75ms;
+    color: $color-text;
     line-height: 1.15;
     margin-bottom: 3rem;
 }
@@ -750,9 +752,20 @@ hr {
     width: 2.5rem;
 }
 
-.hero-button {
+.hero-buttons {
+    @include align-items(center);
     animation-delay: 225ms;
     border: 0;
+    @include display-flex();
+    @include flex-wrap(wrap);
+
+    & > .btn {
+        margin-bottom: 0.5rem;
+    
+        &:not(:last-child) {
+            margin-right: 1rem;
+        }
+    }
 }
 
 .dots-container {
@@ -766,6 +779,7 @@ hr {
 }
 
 .safely {
+    color: $color-red;
     display: inline-block;
     position: relative;
 
